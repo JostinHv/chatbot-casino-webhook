@@ -1,7 +1,13 @@
--- 🗄️ Script de inicialización para Chatbot Casino Backend
--- Arquitectura Hexagonal - Base de Datos MySQL con Llaves Foráneas
+-- 1️⃣ Configurar la conexión actual a UTF-8
+SET NAMES utf8mb4;
+SET CHARACTER SET utf8mb4;
 
-CREATE DATABASE IF NOT EXISTS chatbot_casino_db;
+-- 2️⃣ Crear la base de datos con utf8mb4
+DROP DATABASE IF EXISTS chatbot_casino_db;
+CREATE DATABASE chatbot_casino_db 
+    CHARACTER SET utf8mb4 
+    COLLATE utf8mb4_unicode_ci;
+
 USE chatbot_casino_db;
 
 -- ===================================
@@ -205,3 +211,5 @@ INSERT INTO `respuestas` VALUES
                              (14,9,'En Lima, los casinos solo pueden operar en hoteles de 4 o 5 estrellas y restaurantes turísticos de 5 tenedores.','es','{\"ubicacion\": \"Lima\"}'),
                              (15,9,'En provincias, puedes abrir un casino en hoteles de 3 a 5 estrellas o en resorts equivalentes.','es','{\"ubicacion\": \"Provincia\"}'),
                              (16,9,'Solo se permite abrir casinos en hoteles de 3 a 5 estrellas fuera de Lima, y de 4 a 5 estrellas en Lima y Callao.','es','{}');
+
+    
